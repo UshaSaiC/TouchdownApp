@@ -26,20 +26,19 @@ struct ContentView: View {
                         
                         CategoryGridView()
                         
+                        TitleView(title: "Helmet")
+                        
+                        LazyVGrid(columns: gridLayout, spacing: 15, content: {
+                            ForEach(products) {product in
+                                ProductItemView(product: product)
+                            }
+                        })
+                        .padding(15)
+                        
                         FooterView()
                             .padding(.horizontal)
                     }
                 })
-                
-                //                ScrollView(.vertical, showsIndicators: false, content: {
-                //                    VStack(spacing: 0) {
-                //                        FeaturedTabView()
-                //                            .padding(.vertical, 20)
-                //
-                //                        FooterView()
-                //                            .padding(.horizontal)
-                //                    }
-                //                })
             }
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
         }
