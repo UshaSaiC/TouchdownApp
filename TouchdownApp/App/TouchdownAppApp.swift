@@ -12,6 +12,7 @@ struct TouchdownAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(Shop()) // we can acess these environment values anywhere in project
         }
     }
 }
